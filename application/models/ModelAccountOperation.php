@@ -34,16 +34,4 @@ class ModelAccountOperation extends CI_Model {
         $this->db->update("t_users",$data);
     }
 
-    public function addMovie($data) {
-        $this->db->insert("filmes", $data);
-    }
-
-    public function getMovie() {
-        $this->db->select("*");
-        $this->db->from("filmes");
-
-        $query = $this->db->get();
-
-        return $query->result();
-    }
 }?>

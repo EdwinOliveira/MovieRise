@@ -9,7 +9,7 @@
             <?php if ($this->session->flashdata('incorrectData')) { ?>
                 <div class="alert alert-danger"> <?= $this->session->flashdata('incorrectData') ?> </div>
             <?php } ?>
-            <form action="<?php echo base_url('ControllerPages/storeMovie'); ?>" method="post">
+            <form action="<?php echo base_url('ControllerMedia/storeMovie'); ?>" method="post">
 
                 <img id="imgSRC" src="" alt="your image" class="w-50" />
 

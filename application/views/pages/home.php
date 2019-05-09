@@ -41,10 +41,12 @@
 
 <div class="container-fluid mb-2">
     <div class="row text-center">
-        <?php foreach ($resultMovie as $movie) : ?>
+        <?php foreach ($movies as $media) : ?>
             <div class="col-12 col-lg-4 mt-2">
                 <div class="card">
-                    <p><?php echo $movie->titulo ?></p>
+                    <div class="card-body">
+                        <p><?php echo $media->titulo ?></p>
+                    </div>
                 </div>
             </div>
         <?php endforeach ?>
