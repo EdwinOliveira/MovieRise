@@ -11,23 +11,9 @@ class ControllerPages extends CI_Controller
         $this->load->model('ModelAccountOperation');
     }
 
-    public function view($page = "home")
-    {
-
-        if (!file_exists(APPPATH . "views/pages/{$page}.php")) {
-            show_404();
-        }
-
-        $data["title"] = $page;
-
-        $this->load->view("templates/header", $data);
-        $this->load->view("pages/{$page}");
-        $this->load->view("templates/footer", $data);
-    }
-
     public function login()
     {
-        if ($this->session->userdata('emmail')) {
+        if ($this->session->userdata('email')) {
             redirect('backoffice');
         }
 
@@ -55,6 +41,8 @@ class ControllerPages extends CI_Controller
         );
 
         $result = $this->ModelAccountOperation->Validate_Data($data);
+
+        echo $result[0]->email;
 
         if ($result) {
             $sessionData = array(

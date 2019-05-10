@@ -11,20 +11,6 @@ class ControllerMedia extends CI_Controller
         $this->load->model('ModelMovies');
     }
 
-    public function view($page = "home")
-    {
-
-        if (!file_exists(APPPATH . "views/pages/{$page}.php")) {
-            show_404();
-        }
-
-        $data["title"] = $page;
-
-        $this->load->view("templates/header", $data);
-        $this->loadPage($page);
-        $this->load->view("templates/footer", $data);
-    }
-
     public function storeMovie()
     {
         $config = array(
@@ -66,13 +52,4 @@ class ControllerMedia extends CI_Controller
         redirect('adicionaFilme');
     }
 
-    public function getMovie() {
-        $movies["movies"] = $this->ModelMovies->getMovieModel();
-
-        return $movies;
-    }
-
-    private function loadPage($page) {
-            $this->load->view("pages/{$page}", $this->getMovie());
-    }
 }

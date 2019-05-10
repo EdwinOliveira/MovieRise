@@ -44,8 +44,12 @@
         <?php foreach ($movies as $media) : ?>
             <div class="col-12 col-lg-4 mt-2">
                 <div class="card">
-                    <div class="card-body">
-                        <p><?php echo $media->titulo ?></p>
+                <img src="assets\Imagens\<?php echo $media->foto?>" class="w-100" alt="">
+                    <div class="card-body text-left">
+                        <h4 class="text-primary"><?php echo $media->titulo ?></h4>
+                        <hr class="w-100">
+                        <h6 class="text-primary"><?php echo $media->filme ?></h6>
+                        <p><?php echo $media->descricao ?></p>
                     </div>
                 </div>
             </div>

@@ -22,12 +22,14 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">1</th>
-                <td><img src="" alt=""></td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+            <?php foreach ($movies as $media) : ?>
+                <th scope="row"><?php echo $media->id?></th>
+                <td><img src="assets\Imagens\<?php echo $media->foto?>" class="" style="width:75px" alt="" ></td>
+                <td><?php echo $media->filme ?></td>
+                <td><?php echo $media->titulo?></td>
+                <td><?php echo $media->descricao?></td>
             </tr>
+            <?php endforeach ?>
         </tbody>
     </table>
 </div>
