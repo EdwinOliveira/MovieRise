@@ -20,12 +20,10 @@ class ControllerPages extends CI_Controller
         $config = array(
             array(
                 "field" => "email",
-                "label" => "Email",
                 "rules" => "required|trim"
             ),
             array(
                 "field" => "password",
-                "label" => "Password",
                 "rules" => "required|trim"
             )
         );
@@ -42,11 +40,9 @@ class ControllerPages extends CI_Controller
 
         $result = $this->ModelAccountOperation->Validate_Data($data);
 
-        echo $result[0]->email;
-
         if ($result) {
             $sessionData = array(
-                "email" => $result[0]->email
+                "email" => $this->$result[0]->email
             );
 
             $this->session->set_userdata($sessionData);

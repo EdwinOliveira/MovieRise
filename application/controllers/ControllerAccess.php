@@ -28,20 +28,19 @@ class ControllerAccess extends CI_Controller
 
     private function loadPage($page)
     {
-        /* switch ($page) {
+        switch ($page) {
             case "backoffice":
-                if (!$this->session->userdata("email")) {
-                    redirect();
+                if ($this->session->userdata("email")) {
+                    redirect('backoffice');
                 }
             case "adicionaFilme":
-                if (!$this->session->userdata("email")) {
-                    redirect();
+                if ($this->session->userdata("email")) {
+                    redirect('adicionaFilme');
                 }
             default:
                 $this->load->view("pages/{$page}", $this->getMovie());
-        } */
+        }
 
-        $this->load->view("pages/{$page}", $this->getMovie());
     }
 
     public function getMovie()
