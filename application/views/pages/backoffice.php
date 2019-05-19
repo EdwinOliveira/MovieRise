@@ -6,8 +6,11 @@
             <h5 class="text-primary">Movies</h5>
             <small>Here are all the movies that you have in the website.</small>
         </div>
-        <div class="col-4 mt-3 text-right">
+        <div class="col-2 mt-3 text-right">
             <a href="adicionaFilme" class="btn btn-primary">Adiciona Filme</a>
+        </div>
+        <div class="col-2 mt-3 text-right">
+            <a href="atualizarFilme" class="btn btn-primary">Update Filme</a>
         </div>
     </div>
     <table class="table mt-4">

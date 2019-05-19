@@ -16,4 +16,11 @@ class ModelMovies extends CI_Model {
 
         return $query->result();
     }
+
+    public function updateMovie($data) {
+        $condition = "titulo= '{$data['titulo']}'";
+        $this->db->where($condition);
+        $this->db->set($data );
+        return($this->db->update("filmes"));
+    }
 }?>
